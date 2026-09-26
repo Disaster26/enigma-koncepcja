@@ -179,28 +179,41 @@ section{padding:84px 0}
 .tb.on{background:var(--asf);border-color:var(--asf);color:#fff}
 .tb:hover:not(.on){border-color:var(--asf);color:var(--ink)}
 
-.kraty{display:grid;grid-template-columns:repeat(auto-fill,minmax(272px,1fr));gap:18px}
-.kat{border:1.5px solid var(--line);border-radius:14px;background:#fff;overflow:hidden;transition:.2s;position:relative}
+.kraty{display:grid;grid-template-columns:repeat(auto-fill,minmax(304px,1fr));gap:18px;align-items:stretch}
+.kat{border:1.5px solid var(--line);border-radius:14px;background:#fff;overflow:hidden;transition:.2s;
+  display:flex;flex-direction:column}
 .kat:hover{border-color:var(--asf);box-shadow:0 18px 44px rgba(16,19,22,.14);transform:translateY(-3px)}
-.kat .plyta{background:var(--asf);padding:20px;display:flex;align-items:center;gap:15px;position:relative;overflow:hidden}
+.kat .plyta{background:var(--asf);padding:18px 20px 22px;display:flex;align-items:center;gap:14px;
+  position:relative;overflow:hidden;min-height:98px}
 .kat .plyta::after{content:"";position:absolute;left:0;right:0;bottom:0;height:5px;
-  background:repeating-linear-gradient(90deg,var(--farba) 0 22px,transparent 22px 42px);opacity:.55}
-.kat .lit{font-family:Archivo;font-weight:900;font-size:40px;line-height:.9;letter-spacing:-.06em;
-  background:var(--farba);color:var(--asf);border-radius:8px;padding:6px 13px;min-width:66px;text-align:center}
-.kat .lit sup{font-size:15px;letter-spacing:0;vertical-align:super}
-.kat .plyta h3{color:#fff;font-size:17px;letter-spacing:-.02em}
-.kat .plyta p{color:var(--mut-d);font-size:12px;font-weight:600;margin-top:3px}
-.kat .tresc{padding:18px 20px}
-.kat .tresc>p{font-size:13.5px;color:var(--mut);min-height:40px}
-.kat .fakty{display:flex;gap:7px;margin:14px 0;flex-wrap:wrap}
+  background:repeating-linear-gradient(90deg,var(--farba) 0 22px,transparent 22px 42px);opacity:.5}
+.kat .lit{font-family:Archivo;font-weight:900;font-size:34px;line-height:1;letter-spacing:-.055em;
+  background:var(--farba);color:var(--asf);border-radius:7px;padding:9px 12px;min-width:74px;text-align:center;flex:0 0 auto}
+.kat .lit sup{font-size:13px;letter-spacing:0;vertical-align:super;margin-left:1px}
+.kat .plyta .opis{min-width:0}
+.kat .plyta h3{color:#fff;font-size:15.5px;letter-spacing:-.02em;line-height:1.2;
+  overflow-wrap:break-word;hyphens:auto}
+.kat .plyta p{color:var(--mut-d);font-size:11.5px;font-weight:600;margin-top:4px;line-height:1.3}
+.hit{background:var(--czerw);color:#fff;font-family:Archivo;font-size:10.5px;font-weight:900;
+  letter-spacing:.09em;padding:6px 20px;text-align:center}
+.kat .tresc{padding:18px 20px;display:flex;flex-direction:column;flex:1}
+.kat .tresc>p{font-size:13.5px;color:var(--mut);line-height:1.55}
+.kat .fakty{display:flex;gap:7px;margin:14px 0 16px;flex-wrap:wrap}
 .kat .fakty span{font-size:11.5px;font-weight:700;background:var(--bg2);border:1px solid var(--line);
-  padding:4px 9px;border-radius:6px;color:var(--mut)}
-.kat .dol{display:flex;align-items:center;justify-content:space-between;padding-top:14px;border-top:1px dashed var(--line)}
-.kat .kwota{font-family:Archivo;font-size:22px;font-weight:900;letter-spacing:-.035em}
-.kat .kwota small{display:block;font-family:Inter;font-size:11.5px;color:var(--mut);font-weight:600;letter-spacing:0}
-.kat .go{font-family:Archivo;color:var(--blue);font-weight:800;font-size:14px}
-.hit{position:absolute;top:0;right:0;background:var(--czerw);color:#fff;font-family:Archivo;font-size:10.5px;
-  font-weight:900;letter-spacing:.06em;padding:5px 12px;border-radius:0 0 0 10px;z-index:3}
+  padding:4px 9px;border-radius:6px;color:var(--mut);white-space:nowrap}
+.kat .dol{display:flex;align-items:flex-end;justify-content:space-between;gap:12px;
+  padding-top:15px;border-top:1px dashed var(--line);margin-top:auto}
+.kat .kwota{font-family:Archivo;font-size:21px;font-weight:900;letter-spacing:-.035em;line-height:1.1}
+.kat .kwota small{display:block;font-family:Inter;font-size:11.5px;color:var(--mut);font-weight:600;
+  letter-spacing:0;margin-top:3px}
+.kat .go{font-family:Archivo;color:var(--blue);font-weight:800;font-size:13.5px;white-space:nowrap;padding-bottom:2px}
+.kat:hover .go{color:var(--asf)}
+@media(max-width:420px){
+  .kat .plyta{padding:16px;gap:12px;min-height:86px}
+  .kat .lit{font-size:29px;min-width:62px;padding:8px 10px}
+  .kat .plyta h3{font-size:14.5px}
+  .kat .tresc{padding:16px}
+}
 
 /* ===== DROGA DO PRAWA JAZDY ===== */
 .sciezka{position:relative;color:#fff;overflow:hidden}
@@ -416,8 +429,8 @@ footer a:hover{color:var(--zolta)}
 
     <div class="kraty">
       <div class="kat">
-        <span class="hit">NAJPOPULARNIEJSZA</span>
-        <div class="plyta"><span class="lit">B</span><div><h3>Samochód osobowy</h3><p>do 3,5 tony</p></div></div>
+        <div class="plyta"><span class="lit">B</span><div class="opis"><h3>Samochód osobowy</h3><p>do 3,5 tony</p></div></div>
+        <div class="hit">NAJCZĘŚCIEJ WYBIERANA</div>
         <div class="tresc">
           <p>Kurs podstawowy dla osób od 17 lat i 9 miesięcy. Teoria w sali albo online, jazdy po trasach egzaminacyjnych.</p>
           <div class="fakty"><span>30 h teorii</span><span>30 h jazd</span><span>start 07.10</span></div>
@@ -426,7 +439,7 @@ footer a:hover{color:var(--zolta)}
       </div>
 
       <div class="kat">
-        <div class="plyta"><span class="lit">B<sup>aut</sup></span><div><h3>Skrzynia automatyczna</h3><p>bez sprzęgła</p></div></div>
+        <div class="plyta"><span class="lit">B<sup>aut</sup></span><div class="opis"><h3>Skrzynia automatyczna</h3><p>bez sprzęgła</p></div></div>
         <div class="tresc">
           <p>Dla tych, którzy nie chcą walczyć ze sprzęgłem. Nauka szybsza, a auta w mieście i tak są coraz częściej automatyczne.</p>
           <div class="fakty"><span>30 h teorii</span><span>30 h jazd</span><span>start 07.10</span></div>
@@ -435,7 +448,7 @@ footer a:hover{color:var(--zolta)}
       </div>
 
       <div class="kat">
-        <div class="plyta"><span class="lit">B+E</span><div><h3>Z przyczepą</h3><p>dla posiadaczy kat. B</p></div></div>
+        <div class="plyta"><span class="lit">B+E</span><div class="opis"><h3>Z przyczepą</h3><p>dla posiadaczy kat. B</p></div></div>
         <div class="tresc">
           <p>Przyczepa kempingowa, laweta, przyczepa budowlana. Kurs krótki, egzamin na placu i w ruchu.</p>
           <div class="fakty"><span>20 h teorii</span><span>15 h jazd</span><span>start 14.10</span></div>
@@ -444,7 +457,7 @@ footer a:hover{color:var(--zolta)}
       </div>
 
       <div class="kat">
-        <div class="plyta"><span class="lit">B1</span><div><h3>Czterokołowce</h3><p>już od 16 lat</p></div></div>
+        <div class="plyta"><span class="lit">B1</span><div class="opis"><h3>Czterokołowce</h3><p>już od 16 lat</p></div></div>
         <div class="tresc">
           <p>Pojazdy trój- i czterokołowe. Dobry pierwszy krok, zanim przyjdzie czas na pełną kategorię B.</p>
           <div class="fakty"><span>30 h teorii</span><span>20 h jazd</span><span>start 21.10</span></div>
@@ -453,7 +466,7 @@ footer a:hover{color:var(--zolta)}
       </div>
 
       <div class="kat">
-        <div class="plyta"><span class="lit">B<sup>ns</sup></span><div><h3>Dla niepełnosprawnych</h3><p>auto przystosowane</p></div></div>
+        <div class="plyta"><span class="lit">B<sup>ns</sup></span><div class="opis"><h3>Z orzeczeniem</h3><p>auto przystosowane</p></div></div>
         <div class="tresc">
           <p>Samochód z oprzyrządowaniem i instruktor z doświadczeniem w szkoleniu osób z orzeczeniem. Tempo ustalamy indywidualnie.</p>
           <div class="fakty"><span>30 h teorii</span><span>jazdy indywidualnie</span></div>
@@ -462,7 +475,7 @@ footer a:hover{color:var(--zolta)}
       </div>
 
       <div class="kat">
-        <div class="plyta"><span class="lit">BUS</span><div><h3>Bus do 9 osób</h3><p>także dla firm</p></div></div>
+        <div class="plyta"><span class="lit">BUS</span><div class="opis"><h3>Bus do 9 osób</h3><p>także dla firm</p></div></div>
         <div class="tresc">
           <p>Szkolenie dla kierowców przewożących pracowników lub pasażerów busem. Możliwe grupy zamknięte.</p>
           <div class="fakty"><span>teoria</span><span>jazdy busem</span><span>start 28.10</span></div>
